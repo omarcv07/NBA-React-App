@@ -14,7 +14,7 @@ const NbaPlayers = () => {
     const playersContext = useContext(PlayersContext)
 
 
-    const filteredNbaPlayers = playersContext.players.filter((v) => v.h_in.includes(searchContext.search));
+    const filteredNbaPlayers = playersContext.players.filter((v) => v.h_in.includes(searchContext.search) || v.h_meters.includes(searchContext.search));
 
     const showPlayers = () => {
         if (searchContext.search.length > 0 && filteredNbaPlayers.length > 0) {
